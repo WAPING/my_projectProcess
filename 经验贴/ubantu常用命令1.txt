@@ -1,0 +1,106 @@
+history 查看历史命令
+pwd 显示当前目录的绝对路径
+
+env 查看所有环境变量
+echo $env_name 查看单个环境变量
+export 设置环境变量
+
+su 用户名  由root切换到 普通用户
+
+root用户在/etc/profile中设置全局环境变量
+各用户在username/.bash_profile设针对用户的环境变量
+设置环境变量语句如 export ORACLE_BASE=/u01/app/oracle
+是文件中的环境变量生效命令 source file
+  如： source /etc/profile
+  
+ls 列出当前目录下的文件列表 -l 每行显示一个文件或者目录名称
+                        -a 所有文件目录
+                        -r 以相反顺序显示文件及目录
+                        -s 显示文件及目录的大小 区块为单位
+                        -sh 人性化显示目录文件的大小
+                        -R 递归显示目录中的内容
+                        -S 将显示结果按照文件大小排列
+                        -X 按拓展名来排列
+                      
+wc -l file 输出文件的行数
+wc -c file 输出文件的字节数
+wc -w file 输出文件的单词数
+wc -L file 输出文件中最长行的长度
+ls|wc -l 统计当前目录下有多少普通文件和目录
+ps|wc -l 统计当前有多少个进程
+
+cp命令 功能 拷贝文件或目录
+
+mkdir 创建文件夹   mkdir folder_name 在当前目录创建文件夹
+rmdir 用于删除空文件夹
+
+mv a b 移动文件或者目录a到文件b的目录下 默认路径为当前目录
+rm -fR a 强制删除文件或者目录a 默认路径为当前目录
+touch a 创建文件命令 默认路径为当前目录
+
+head -100 file 查看文件file的前100行
+tail -100 file 查看文件file的后100行
+tail -100f file file 动态的 查看文件file的前100行
+
+find -name "*.d" 在当前目录下查找以 .d 结尾的文件
+find -name \*d 同上 不用引号，则特殊字符须使用转译符\
+find /home /etc -name "*.d" 在/home和/etc两个目录下查找以 .d 结尾的文件
+find /home /etc -name "*.d" 2>/dev/null 
+        因为权限不够可能会输出错误信息，
+        用 2>/dev/null可以把错误信息过滤掉
+        
+find /etc -atime 2 查找/etc下两天前访问过的文件
+find /etc -mtime 1 查找/etc下一天前修改过的文件
+find / empty 查找空空文件或目录
+
+grep linux下的行过滤工具 
+cat|grep entry -B 10 termcap 输出termcap文件中匹配字符串entry 前的10行
+more|grep entry -A 10 termcap 输出termcap文件中匹配字符串entry 后的10行
+cat|grep entries -n termcap 输出termcap文件的同时输出行号
+cat|grep a -v termcap 反向查找，搜索出termcap文件不包含字符串a的内容
+ls |grep ^g 查找以g开头的行
+ls -a|grep b$ 查找以b结尾的行
+
+whereis file 查询文件位置
+type ll 查看命令的属性
+which echo 在环境变量$PATH指定的路径中查找文件，可指定多个文件
+locate file 快速查找file文件
+
+alias 给一个更加长的命令重新命名一个更方便的命令  
+ e.g. alias ll='ls -a'
+unalias ll 解除已经命名的别名
+
+ln -s /opt/a b   给/oracle/opt下的a文件在/opt下建立个软链接，链接名字叫b
+
+cat -n file 在显示其输出文件file的内容并显示行号
+cat >file 创建文件file，回车添加内容，然后Ctrl+d 保存退出
+cat -n file1>file2 将file1的内容加上行号后输入到file2的档案里
+cat -b file1>>file2 将file1的内容加上行号后输入到file2的档案 末尾
+cat /dev/null > file 清空文件file中的内容清空
+
+vi linux常用的文本编译器
+vi -R 以 只读 的方式打开
+vi +  启动后跳转到结尾处
+vi +5 启动后跳转到文本的第五行
+vi -version 查看vim版本
+vi -h 帮助信息
+
+vi光标移动 及 vi搜索
+:wq 保存并退出
+:w! 强行保存
+:q! 放弃修改退出
+:set nu 设置行号
+:st nonu 去除行号
+
+
+
+常用关机命令
+shutdown now 马上关机
+shutdown -h 10        10分钟之后自动关机
+halt 关机，不会断电源
+poweroff 关机并断掉电源
+shutdown -r now 马上重启
+shutdown -r 10   过十分钟之后重启
+shutdown -r 19:45    19:45分重启
+init 0 关机
+init 1 重启

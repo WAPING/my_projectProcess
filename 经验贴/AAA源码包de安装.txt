@@ -1,0 +1,9 @@
+解压：
+tar -svf xxx.tar
+tar -zxvf xxx.tar.gz
+tar -jzvf xxx.tar.gz2
+
+编译安装：
+./configure prefix=/usr/local
+make (编译)
+make install (安装)

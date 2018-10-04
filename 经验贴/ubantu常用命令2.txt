@@ -1,0 +1,42 @@
+tar -xvf a.tar 
+  其中-x为解压参数，-v显示解压过程；
+  -f：使用档案名称，这个参数放在最后
+tar -zxvf a.tar.gz
+  -z 参数为解压tar.gz包专用的参数
+  
+tar -zcvf a.tar.gz *.jpg
+  把本文件下所有以.jpg结尾的文件打成a.tar.gz包
+  -c 为 打包命令
+  
+tar -rf a.tar c 
+     把c文件追加到a.tar包中
+     -r 表示追加的参数
+     
+tar -cjf a.tar.bz2 *.jpg
+    -j 表示tar.bz2包
+    
+.gz文件的处理
+gzip filename 用于将文件压缩 源文件将被删除
+gzip -r dir/ 将dir下面的所有文件压缩，加上后缀.gz 每个文件单独压缩
+gzip -t filename.gz 检测压缩文件的整体性
+gzip -d filename.gz 解压，把原包删除
+gzip -1(-9) filename 将filename以最快最好的方法压缩
+
+bzip2 用来处理 .bz2 结尾的文件
+bzip2 filename 打包成filename.bz2文件，原文件删除
+bzip2 -k filename 打包成filename.bz2文件，保留原文件
+bzip2 -t filename.bz2 检测压缩文件的完整性
+bzip2 -d filename.gz2 解压，删除源文件 （-k 保留）
+bzip2 -1(-9) filename 将filename以最快最好的方法压缩
+
+unzip filename.zip 解压以.zip 结尾的压缩包 
+
+
+
+
+
+
+
+
+
+

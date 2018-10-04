@@ -1,0 +1,5 @@
+https://blog.csdn.net/piaoxuezhong/article/details/78897522   anaconda+tensorflow+spyder正确运行
+
+https://blog.csdn.net/colourful_sky/article/details/73823939
+
+ubuntu下查看CPU/GPU/内存使用率及分配   watch -n 1 nvidia-smi      每秒刷新一次
